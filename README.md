@@ -105,11 +105,11 @@ This repository contains a **FastAPI-based API** for estimating story points in 
 - **Mean Absolute Error (MAE)**: `1.7649`
 - **Root Mean Squared Error (RMSE)**: `2.2924`
 
-### MAE Graph
-![MAE Graph](images/mae_graph.png)
+### Histogram of Prediction Errors
+![Prediction Errors](Prediction_Errors.png)
 
-### RMSE Graph
-![RMSE Graph](images/rmse_graph.png)
+### Residual Plot
+![Residual Plot](Residual_Plot.png)
 
 # 📌 Next Steps
 
