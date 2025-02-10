@@ -13,7 +13,7 @@ This repository contains a **FastAPI-based API** for estimating story points in 
 - **Final Evaluation**: Evaluate the model using **MAE**, **RMSE**, and visual graphs.
 - **Model Deployment**: Deploy the model using **FastAPI**.
 - **Docker Support**: Containerize the API for easy deployment.
-- **CI/CD Pipeline**: Automate deployment using **GitHub Actions** for Railway or Render.
+- **CI/CD Pipeline**: Automate deployment using **GitHub Actions** for Railway.
 
 ---
 
@@ -68,14 +68,16 @@ This repository contains a **FastAPI-based API** for estimating story points in 
    'http://localhost:8000/predict' \
    -H 'Content-Type: application/json' \
    -d '{"title": "Optimize database queries", "description": "Improve indexing and reduce query latency"}'
-
 # 🚀 CI/CD Pipeline
 
 ## For Railway.app
 
- 1. **Add Railway Token**:
- 2. **Create .github/workflows/deploy.yml**:
-    ```yaml
+1. **Add Railway Token**:
+   - Go to GitHub Repo → Settings → Secrets → "New repository secret".
+   - Add `RAILWAY_TOKEN` with your Railway API key.
+
+2. **Create `.github/workflows/deploy.yml`**:
+   ```yaml
    name: Deploy to Railway
 
    on:
@@ -98,12 +100,6 @@ This repository contains a **FastAPI-based API** for estimating story points in 
            run: railway up
            env:
              RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-3. ***Push Changes***:
-     ```bash
-   git add .github/workflows/deploy.yml
-   git commit -m "Add CI/CD for Railway"
-   git push origin main
-
 
 # 📊 Evaluation Metrics
 - **Mean Absolute Error (MAE)**: `1.7649`
@@ -118,7 +114,7 @@ This repository contains a **FastAPI-based API** for estimating story points in 
 # 📌 Next Steps
 
 - **Extend the API**: Add more features like user authentication or task history.
-- **Deploy to Cloud**: Use Railway.app, Render.com, or AWS for production deployment.
+- **Deploy to Cloud**: Use Railway.app (your choice)
 - **Improve Model**: Experiment with other transformer models or fine-tune BERT.
 
 ---
